@@ -55,7 +55,7 @@ def investigar_personaje():
     sospechosos=list(personajes.keys())
     
     while y==0:
-        revisar=input("Selecciona un sospechoso a interrogar: \n1) Ingeniero\n2) Espia\n3) Medico\n4) Soldado\n5) Francotirador\n")
+        revisar=input("Selecciona un sospechoso a interrogar: \n1) Donatello\n2) Leo\n3) Rafael\n4) Miguel angel\n5) April\n")
         y=buscar(sospechosos,revisar,0)
     
 def investigar_locacion():
@@ -63,7 +63,7 @@ def investigar_locacion():
     sospechosos=list(locaciones.keys())
     
     while y==0:
-        revisar=input("Selecciona un lugar a investigar: \n1) Casa\n2) Tunel\n3) Barracones\n4) Puesto de guardia\n5) Enfermeria\n")
+        revisar=input("Selecciona un lugar a investigar: \n1) Tuneles\n2) Dojo\n3) Barracones\n4) Puesto de guardia\n5) Enfermeria\n")
         y=buscar(sospechosos,revisar,0)
     
     
@@ -72,7 +72,7 @@ def investigar_arma():
     sospechosos=list(armas.keys())
     
     while y==0:
-        revisar=input("Selecciona un arma a inspeccionar: \n1) Papel de regalo\n2) Katana\n3) Cuchillo mariposa\n4) Guante de box\n5) Llave inglesa\n")
+        revisar=input("Selecciona un arma a inspeccionar: \n1) Chacos\n2) Katana\n3) Cuchillo mariposa\n4) Guante de box\n5) Llave inglesa\n")
         y=buscar(sospechosos,revisar,0)
     
 
@@ -163,20 +163,26 @@ print("\nSe te acabaron los intentos, ahora tienes que decidir al culpable, su a
 y=0
 
 while y==0:
-    final_culpable=input("Selecciona un culpable: \n1) Ingeniero\n2) Espia\n3) Medico\n4) Soldado\n5) Francotirador\n")
+    final_culpable=input("Selecciona un culpable: \n1) Donatello\n2) Leo\n3) Rafael\n4) Miguel angel\n5) April\n")
     y=buscar(list(personajes.keys()),final_culpable,1)
     
 y=0
 while y==0:
-    final_lugar=input("Selecciona el lugar del asesinato: \n1) Casa\n2) Tunel\n3) Barracones\n4) Puesto de guardia\n5) Enfermeria\n")
+    final_lugar=input("Selecciona el lugar del asesinato: \n1) Tuneles\n2) Dojo\n3) Barracones\n4) Puesto de guardia\n5) Enfermeria\n")
     y=buscar(list(locaciones.keys()),final_lugar,1)
     
 y=0
 while y==0:
-    final_arma=input("Selecciona el arma homicida: \n1) Papel de regalo\n2) Katana\n3) Cuchillo mariposa\n4) Guante de box\n5) Llave inglesa\n")
+    final_arma=input("Selecciona el arma homicida: \n1) Chacos\n2) Katana\n3) Cuchillo mariposa\n4) Guante de box\n5) Llave inglesa\n")
     y=buscar(list(armas.keys()),final_arma,1)
    
 print("\n"+final_resultado+"\n")
+print("Deduciste "+str(respuestas_correctas)+" parte(s) del asesinato")
+if respuestas_correctas == 3:
+    print("\nGanaste!!!")
+else:
+    print("\nPerdiste")
+
 print("Deduciste "+str(respuestas_correctas)+" parte(s) del asesinato")
 if respuestas_correctas == 3:
     print("\nGanaste!!!")
